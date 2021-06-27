@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Fine-Icon</title>
+		<link rel="icon" type="image/x-icon" href="logo.jpg">
+		<link href="../dist/index.css" type="text/css" rel="stylesheet"/>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				list-style: none;
+				display: flex;
+				flex-wrap: wrap;
+				padding: 20px;
+				width: 880px;
+				margin: 0 auto;
+			}
+			li{
+				width: 88px;
+				height: 88px;
+				cursor: pointer;
+				line-height: 88px;
+				text-align: center;
+				transition:all .3s;
+			}
+			li>.fine-icon{
+				display: inline-block;
+				font-size: 36px;
+				
+			}
+			li:hover{
+				background: #f9f9f9;
+				border-radius: 5px;
+				transform: scale3d(1.5,1.5,1.5);
+				box-shadow: 0 0 10px #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="list"></ul>
+		<script>
+			const list = document.querySelector("#list");
+			fetch('iconfont.json')
+			.then(res=>res.json())
+			.then(data=>{
+				console.log(data)
+				let elStr = ''
+				data.glyphs.forEach(item=>{
+					elStr += `<li><i class="fine-icon icon-${item.font_class}" title="111"></i></li>`
+				})
+				list.innerHTML = elStr
+			})
+		</script>
+	</body>
+</html>

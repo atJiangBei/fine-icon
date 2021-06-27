@@ -1,11 +1,11 @@
 {
   "name": "fine-icon",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "private": false,
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "description": "icon",
   "scripts": {
-    
+	"build":"webpack --env mode=production && node write"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,12 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "devDependencies": {
+    "css-loader": "^5.2.6",
+    "mini-css-extract-plugin": "^1.6.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.40.0",
+    "webpack-cli": "^4.7.2"
+  }
 }
