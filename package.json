@@ -1,11 +1,11 @@
 {
   "name": "fine-icon",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "private": false,
   "main": "dist/index.js",
   "description": "icon",
   "scripts": {
-	"build":"webpack --env mode=production && node write"
+    "build": "webpack --env mode=production && node write"
   },
   "repository": {
     "type": "git",
